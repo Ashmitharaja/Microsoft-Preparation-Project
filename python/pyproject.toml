@@ -128,7 +128,7 @@ pandas = [
     "pandas ~= 2.2"
 ]
 pinecone = [
-    "pinecone[asyncio, grpc] ~= 7.0"
+    "pinecone[asyncio, grpc] >= 7,< 10"
 ]
 postgres = [
     "psycopg[binary,pool] ~= 3.2"
