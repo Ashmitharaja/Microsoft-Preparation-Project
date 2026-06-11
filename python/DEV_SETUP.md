@@ -43,7 +43,7 @@ uv sync --all-extras --dev
 uv run pre-commit install -c python/.pre-commit-config.yaml
 ```
 
-Or you can then either install [`make`](https://gnuwin32.sourceforge.net/packages/make.htm) and then follow the guide for Mac and Linux, or run the following commands, the commands are shown as bash but should work in powershell as well.
+Or you can then either install [`make`](https://www.gnu.org/software/make/) and then follow the guide for Mac and Linux, or run the following commands, the commands are shown as bash but should work in powershell as well.
 
 ### For Mac and Linux (both native and WSL)
 
