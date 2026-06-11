@@ -16,6 +16,45 @@
 
 Semantic Kernel is a model-agnostic SDK that empowers developers to build, orchestrate, and deploy AI agents and multi-agent systems. Whether you're building a simple chatbot or a complex multi-agent workflow, Semantic Kernel provides the tools you need with enterprise-grade reliability and flexibility.
 
+## Architectural Insight: Why Semantic Kernel (MAF) is Different from Typical Agent Frameworks
+
+Unlike many agent frameworks that treat orchestration as a prompt-chaining problem, Semantic Kernel (now Microsoft Agent Framework) is designed around a more fundamental abstraction:
+
+Agents are first-class runtime components, not prompt wrappers.
+
+This distinction becomes important at scale.
+
+In typical LLM applications:
+
+“agents” are often just structured prompts with tool calls
+orchestration logic lives in application code or ad-hoc chains
+tool usage is loosely bound to model output
+
+In contrast, Semantic Kernel introduces a separation of concerns between reasoning and execution:
+
+Agent layer → defines intent, behavior, and responsibility boundary
+Kernel layer → manages execution, tool invocation, and orchestration
+Plugin layer → provides deterministic, testable capabilities
+Runtime layer → coordinates multi-agent workflows and state
+
+This enables a key property that is often overlooked:
+
+The system remains stable even when models, prompts, or tools change.
+
+## Why this matters in practice
+
+This design avoids a common failure mode in LLM systems:
+
+Prompt logic becoming the “system of record”
+Tool usage embedded implicitly inside prompts
+Hard-to-debug multi-step reasoning chains
+
+Instead, Semantic Kernel moves complexity into explicit, inspectable components, making:
+
+agent behavior reproducible
+tool usage observable
+multi-agent coordination structured rather than emergent
+
 ## System Requirements
 
 - **Python**: 3.10+
